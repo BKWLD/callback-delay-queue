@@ -1,0 +1,19 @@
+{
+  "name": "callback-delay-queue",
+  "version": "0.0.0",
+  "description": "Delay execution of a callback from event listeners",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BKWLD/callback-delay-queue.git"
+  },
+  "author": "info@bkwld.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BKWLD/callback-delay-queue/issues"
+  },
+  "homepage": "https://github.com/BKWLD/callback-delay-queue#readme"
+}
