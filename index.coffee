@@ -11,16 +11,16 @@ Vue.js with vue-router example:
 	# A route component
 	new Vue
 		el: '#home'
-		route: activate: (transition) ->
+		route: deactivate: (transition) ->
 			queue = new Queue(transition.next)
-			@$broadcast 'activate', queue
+			@$broadcast 'deactivating', queue
 			transition.next() if queue.isEmpty()
 
 	# A child of the route component
 	new Vue
 		el: '#home .marquee'
-		events: activate: (queue) ->
-			queue.waitFor (done) => Velocity(@$el, {opacity: 0}, 300, done)
+		events: deactivating: (queue) ->
+			queue.waitFor (done) => Velocity(@$el, {opacity: 0}, done)
 
 ###
 module.exports = class CallbackDelayQueue
