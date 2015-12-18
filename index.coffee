@@ -36,9 +36,7 @@ module.exports = class CallbackDelayQueue
 	wait: -> @pending++
 
 	# Remove an item from the queue and see if we can resolve the transition
-	done: ->
-		console.log 'done'
-		@callback() if --@pending == 0
+	done: -> @callback() if --@pending == 0
 
 	# Convenience method that invokes passed callback with a the `done` callback
 	# @params {function} cb
