@@ -33,17 +33,17 @@ module.exports = class CallbackDelayQueue
 	constructor: (@callback) ->
 
 	# Add to the queue, resulting in the resolution waiting
-	wait: -> @pending++
+	wait: => @pending++
 
 	# Remove an item from the queue and see if we can resolve the transition
-	done: -> @callback() if --@pending == 0
+	done: => @callback() if --@pending == 0
 
 	# Convenience method that invokes passed callback with a the `done` callback
 	# @params {function} cb
-	waitFor: (cb) ->
-		this.wait()
+	waitFor: (cb) =>
+		@wait()
 		cb => @done()
 
 	# Check whether the queue is finished
 	# @return {boolean}
-	isEmpty: -> @pending == 0
+	isEmpty: => @pending == 0
